@@ -1,0 +1,196 @@
+# Pb isotope ratio data to investigate potential source areas
+# of antropogenic Pb reaching the Arctic in association with PM10.
+# This dataset is used by the function isoplot.pm10 to generate
+# three-isotope plots.
+# Data sources are indicated in the Ref column:
+#
+# 1 Bollhofer and Rosman, Isotopic source signatures for atmospheric
+#   lead: The Northern Hemisphere. Geochimica et Cosmochimica Acta,
+#   2001, 65, 1727-1740.
+#
+# 2 Carignan, Simonetti and Gariepy, Dispersal of atmospheric lead in
+#   northeastern North America as recorded by epiphytic lichens.
+#   Atmospheric Environment, 2002, 36, 3759-3766.
+#
+# 3 Mukai, Machida, Tanaka, Vera and Uematsu, Lead isotope ratios in
+#   the urban air of eastern and central Russia. Atmospheric Environment,
+#   2001, 35, 2783-2793.
+#
+# 4 Mukai, Tanaka and Fujii, Regional Characteristics of Sulfur and lead
+#   isotope ratios in the atmosphere at several chinese urban sites.
+#   Environmental Science and Technology, 2001, 35, 1064-1071.
+#
+# 5 Zhu, Tang, Lee, Zhang and Zhang, Lead concentrations and isotopes 
+#   in aerosols from Xiamen, China. Marine Pollution Bulletin, 2010,
+#   60, 1946-1955.
+#
+sample	Pb206204	Pb207204	Pb208204	Pb206207	Pb207206	Pb208206	ref	area
+Maine	18.5410	15.6490	38.2730	1.1850	0.8439	2.0640	2	usa
+NewYork1	18.8050	15.6490	38.3480	1.2020	0.8319	2.0390	2	usa
+Vermont	18.9040	15.6790	38.6160	1.2060	0.8292	2.0430	2	usa
+NewJersey	18.8380	15.6510	38.4390	1.2040	0.8306	2.0410	2	usa
+Maryland	18.8250	15.6540	38.4400	1.2030	0.8313	2.0420	2	usa
+Tampa1	NA	NA	NA	1.2140	0.8237	2.0200	1	usa
+Pasadena	NA	NA	NA	1.1879	0.8418	2.0590	1	usa
+PuertoRico	NA	NA	NA	1.1761	0.8503	2.0650	1	usa
+Argonne	NA	NA	NA	1.2109	0.8258	2.0290	1	usa
+Wilmington	NA	NA	NA	1.2229	0.8177	2.0120	1	usa
+SouthHolland	NA	NA	NA	1.2200	0.8197	2.0160	1	usa
+Sioux	NA	NA	NA	1.1950	0.8368	2.0500	1	usa
+Dallas	NA	NA	NA	1.2021	0.8319	2.0340	1	usa
+NewYork2	NA	NA	NA	1.2101	0.8264	2.0340	1	usa
+Tampa2	NA	NA	NA	1.2195	0.8200	2.0210	1	usa
+WoodsHole	NA	NA	NA	1.1840	0.8446	2.0650	1	usa
+#Davis	NA	NA	NA	1.1730	0.8525	2.0830	1	usa
+#Berkeley	NA	NA	NA	1.1665	0.8573	2.0850	1	usa
+#Pasadena	NA	NA	NA	1.1774	0.8493	2.0700	1	usa
+Mauricie	NA	NA	NA	1.1760	0.8503	2.0760	2	canada
+LacCroix	NA	NA	NA	1.1810	0.8467	2.0670	2	canada
+LacDecoigne	NA	NA	NA	1.1800	0.8475	2.0670	2	canada
+LacBrome	NA	NA	NA	1.1850	0.8439	2.0600	2	canada
+Lusignan	NA	NA	NA	1.1880	0.8418	2.0600	2	canada
+Rougemont	NA	NA	NA	1.1820	0.8460	2.0620	2	canada
+LacStJean	NA	NA	NA	1.1730	0.8525	2.0790	2	canada
+Arboretum	NA	NA	NA	1.1800	0.8475	2.0730	2	canada
+LacDoreen	NA	NA	NA	1.1670	0.8569	2.0850	2	canada
+KM	NA	NA	NA	1.1710	0.8540	2.0840	2	canada
+ChutesMcDonald	NA	NA	NA	1.1800	0.8475	2.0720	2	canada
+PointeauxOutardes	NA	NA	NA	1.1700	0.8547	2.0810	2	canada
+Escoumins	NA	NA	NA	1.1780	0.8489	2.0730	2	canada
+HavreStPierre	NA	NA	NA	1.1790	0.8482	2.0720	2	canada
+ParcBic	NA	NA	NA	1.1680	0.8562	2.0840	2	canada
+Laporte	NA	NA	NA	1.1730	0.8525	2.0830	2	canada
+#Chibougamau	NA	NA	NA	1.1540	0.8666	2.1040	2	canada
+KM1	NA	NA	NA	1.1750	0.8511	2.0800	2	canada
+KM2	NA	NA	NA	1.1950	0.8368	2.0770	2	canada
+LA1	NA	NA	NA	1.1610	0.8613	2.0950	2	canada
+CLaforge2	NA	NA	NA	1.1610	0.8613	2.0940	2	canada
+#Chisasibi	NA	NA	NA	1.1460	0.8726	2.1230	2	canada
+#Kouri	NA	NA	NA	1.1460	0.8726	2.1130	2	canada
+MtCarletonPark	NA	NA	NA	1.1890	0.8410	2.0580	2	canada
+LiscombSanctuary	NA	NA	NA	1.1770	0.8496	2.0790	2	canada
+KingCross	NA	NA	NA	1.1730	0.8525	2.0810	2	canada
+LacBrasD	NA	NA	NA	1.1760	0.8503	2.0740	2	canada
+Debert	NA	NA	NA	1.1750	0.8511	2.0800	2	canada
+ParcKemjikujik	NA	NA	NA	1.1900	0.8403	2.0520	2	canada
+PeggyCove	NA	NA	NA	1.1790	0.8482	2.0710	2	canada
+Burnaby	NA	NA	NA	1.1770	0.8496	2.0600	1	canada
+Chicoutimi	NA	NA	NA	1.1670	0.8569	2.0820	1	canada
+#Victoria	NA	NA	NA	1.1450	0.8734	2.1090	1	canada
+Calgary	NA	NA	NA	1.1650	0.8587	2.0830	1	canada
+#Winnipeg	NA	NA	NA	1.1250	0.8889	2.1260	1	canada
+Toronto	NA	NA	NA	1.1610	0.8617	2.0900	1	canada
+NewFoundland	NA	NA	NA	1.1690	0.8554	2.0830	1	canada
+Y-31	18.1689	NA	NA	1.1626	0.8602	2.1131	5	china
+Y-34	18.1842	NA	NA	1.1633	0.8596	2.1132	5	china
+Y-35	18.3138	NA	NA	1.1688	0.8556	2.1066	5	china
+Y-36	18.1740	NA	NA	1.1629	0.8600	2.1137	5	china
+Y-38	18.1511	NA	NA	1.1617	0.8608	2.1154	5	china
+Y-39	18.2313	NA	NA	1.1655	0.8580	2.1110	5	china
+Y-40	18.2512	NA	NA	1.1662	0.8575	2.1094	5	china
+Y-41	18.2066	NA	NA	1.1643	0.8589	2.1105	5	china
+Y-42	18.1728	NA	NA	1.1630	0.8599	2.1133	5	china
+Y-43	18.2739	NA	NA	1.1671	0.8568	2.1078	5	china
+Y-44	18.2837	NA	NA	1.1674	0.8566	2.1081	5	china
+Y-45	18.3412	NA	NA	1.1706	0.8543	2.1029	5	china
+Y-46	18.3396	NA	NA	1.1654	0.8581	2.1098	5	china
+Y-47	18.2306	NA	NA	1.1631	0.8598	2.1122	5	china
+Y-48	18.1841	NA	NA	1.1663	0.8574	2.1085	5	china
+Y-49	18.2465	NA	NA	1.1691	0.8554	2.1052	5	china
+Y-50	18.3166	NA	NA	1.1645	0.8588	2.1111	5	china
+Y-51	18.2224	NA	NA	1.1653	0.8582	2.1096	5	china
+Y-52	18.2393	NA	NA	1.1672	0.8567	2.1069	5	china
+Y-53	18.2726	NA	NA	1.1642	0.8589	2.1100	5	china
+Y-54	18.2103	NA	NA	1.1653	0.8582	2.1089	5	china
+Y-55	18.2297	NA	NA	1.1657	0.8579	2.1095	5	china
+Y-56	18.2405	NA	NA	1.1651	0.8583	2.1106	5	china
+Y-57	18.2314	NA	NA	1.1681	0.8561	2.1056	5	china
+Y-58	18.2932	NA	NA	1.1680	0.8561	2.1056	5	china
+Y-59	18.2947	NA	NA	1.1678	0.8563	2.1050	5	china
+Y-60	18.2963	NA	NA	1.1692	0.8553	2.1049	5	china
+Y-61	18.3171	NA	NA	1.1684	0.8558	2.1045	5	china
+Y-62	18.3074	NA	NA	1.1683	0.8560	2.1058	5	china
+Y-63	18.3018	NA	NA	1.1685	0.8558	2.1056	5	china
+Y-64	18.3015	NA	NA	1.1668	0.8571	2.1085	5	china
+Y-66	18.2634	NA	NA	1.1642	0.8590	2.1102	5	china
+Y-67	18.2014	NA	NA	1.1657	0.8579	2.1095	5	china
+Y-68	18.2417	NA	NA	1.1677	0.8564	2.1061	5	china
+Y-69	18.2839	NA	NA	1.1664	0.8573	2.1095	5	china
+Y-70	18.2541	NA	NA	1.1654	0.8581	2.1086	5	china
+Y-71	18.2355	NA	NA	1.1663	0.8574	2.1090	5	china
+Y-72	18.2511	NA	NA	1.1641	0.8591	2.1111	5	china
+Y-73	18.2031	NA	NA	1.1665	0.8572	2.1082	5	china
+Y-74	18.2531	NA	NA	1.1625	0.8602	2.1138	5	china
+Harbin 	NA	NA	NA	NA	0.8530	2.0980	4	china
+Harbinw	NA	NA	NA	NA	0.8710	2.1220	4	china
+Changchun 	NA	NA	NA	NA	0.8580	2.1130	4	china
+Changchunw	NA	NA	NA	NA	0.8730	2.1310	4	china
+Dalian 	NA	NA	NA	NA	0.8810	2.1510	4	china
+Dalianw	NA	NA	NA	NA	0.8790	2.1460	4	china
+Waliguan 	NA	NA	NA	NA	0.8620	2.1140	4	china
+Shanghai 	NA	NA	NA	NA	0.8650	2.1180	4	china
+Shanghaiw	NA	NA	NA	NA	0.8630	2.1140	4	china
+Nanjing 	NA	NA	NA	NA	0.8610	2.1180	4	china
+Nanjingw	NA	NA	NA	NA	0.8580	2.1110	4	china
+#Guiyang 	NA	NA	NA	NA	0.8440	2.0770	4	china
+#Guiyangw	NA	NA	NA	NA	0.8410	2.0730	4	china
+Beijingw	NA	NA	NA	NA	0.8630	2.1070	4	china
+Beijing1	NA	NA	NA	NA	0.8710	2.1290	4	china
+#Seoul	NA	NA	NA	1.1500	0.8696	2.1260	1	china
+HongKong	NA	NA	NA	1.1490	0.8703	2.1240	1	china
+XinShao	NA	NA	NA	1.1770	0.8496	2.0940	1	china
+ChengDu	NA	NA	NA	1.1660	0.8576	2.1070	1	china
+Beijing2	NA	NA	NA	1.1410	0.8764	2.1340	1	china
+Vladivostok1	17.9800	NA	NA	1.1533	0.8671	2.1100	3	russia
+Vladivostok2	17.9500	NA	NA	1.1510	0.8688	2.1200	3	russia
+Khabarovsk	17.9300	NA	NA	1.1457	0.8728	2.1190	3	russia
+Yakutsk	17.8900	NA	NA	1.1511	0.8687	2.1090	3	russia
+Surgut	17.6900	NA	NA	1.1406	0.8767	2.1200	3	russia
+Nizhnevartovsk	17.3600	NA	NA	1.1181	0.8944	2.1420	3	russia
+Kemerovo	17.0500	NA	NA	1.0984	0.9104	2.1620	3	russia
+Moscow1	18.0100	NA	NA	1.1627	0.8601	2.1020	3	russia
+Moscow2	17.5600	NA	NA	1.1423	0.8754	2.1130	3	russia
+Budapest	17.3000	NA	NA	1.1120	0.8993	2.1470	1	russia
+Prague	17.5100	NA	NA	1.1270	0.8873	2.1320	1	russia
+Bucharest	18.1000	NA	NA	1.1590	0.8628	2.1040	1	russia
+Chisinav	18.0000	NA	NA	1.1530	0.8673	2.1080	1	russia
+Vilnius	17.9700	NA	NA	1.1570	0.8643	2.0970	1	russia
+Kharkov	18.1400	NA	NA	1.1640	0.8591	2.0980	1	russia
+Bakou	17.9600	NA	NA	1.1600	0.8621	2.0960	1	russia
+AlmaAlta	17.5200	NA	NA	1.1250	0.8889	2.1360	1	russia
+Ulanbaator1	17.4700	NA	NA	1.1280	0.8865	2.1230	1	russia
+Ulanbaator2	18.1100	NA	NA	1.1631	0.8598	2.0970	1	russia
+StPetersburg	18.0000	NA	NA	1.1559	0.8651	2.1060	1	russia
+Moscow3	17.8700	NA	NA	1.1480	0.8711	2.1110	1	russia
+Moscow4	18.1250	NA	NA	1.1610	0.8613	2.1020	1	russia
+Apatity	17.9100	NA	NA	1.1490	0.8703	2.1130	1	russia
+Mainz	17.6300	NA	NA	1.1330	0.8826	2.1230	1	europe
+Nurnberg	17.8600	NA	NA	1.1450	0.8734	2.1140	1	europe
+Heidelberg1	17.7300	NA	NA	1.1370	0.8795	2.1200	1	europe
+Hamburg	17.7800	NA	NA	1.1430	0.8749	2.1140	1	europe
+Schwarzheide	17.8000	NA	NA	1.1410	0.8764	2.1210	1	europe
+Heidelberg2	17.9800	NA	NA	1.1519	0.8681	2.1060	1	europe
+Heidelberg3	18.0100	NA	NA	1.1550	0.8658	2.1060	1	europe
+Constance	17.8500	NA	NA	1.1430	0.8749	2.1170	1	europe
+Plon	18.0450	NA	NA	1.1559	0.8651	2.1010	1	europe
+Innsbruck	18.0300	NA	NA	1.1570	0.8643	2.1020	1	europe
+Odense	17.7900	NA	NA	1.1440	0.8741	2.1110	1	europe
+Copenhagen	17.7500	NA	NA	1.1390	0.8780	2.1190	1	europe
+Rejkjavik	17.3300	NA	NA	1.1230	0.8905	2.1260	1	europe
+Groningen	17.6600	NA	NA	1.1330	0.8826	2.1240	1	europe
+Emmen	17.7200	NA	NA	1.1370	0.8795	2.1190	1	europe
+Montpellier	17.6100	NA	NA	1.1299	0.8850	2.1250	1	europe
+Grenoble1	17.8200	NA	NA	1.1419	0.8757	2.1090	1	europe
+Grenoble2	17.7800	NA	NA	1.1390	0.8780	2.1130	1	europe
+Grenoble3	17.6200	NA	NA	1.1291	0.8857	2.1270	1	europe
+Grenoble4	17.3150	NA	NA	1.1100	0.9009	2.1480	1	europe
+Paris	17.6300	NA	NA	1.1320	0.8834	2.1240	1	europe
+Chateauneuf	17.7400	NA	NA	1.1370	0.8795	2.1200	1	europe
+Avignon	17.6250	NA	NA	1.1291	0.8857	2.1220	1	europe
+Madrid	17.0300	NA	NA	1.0970	0.9116	2.1620	1	europe
+Valencia	17.4500	NA	NA	1.1210	0.8921	2.1360	1	europe
+Venice1	17.9800	NA	NA	1.1510	0.8688	2.1090	1	europe
+Venice2	18.0400	NA	NA	1.1539	0.8666	2.1010	1	europe
+Rome	17.3550	NA	NA	1.1145	0.8973	2.1370	1	europe
+Athens	17.7800	NA	NA	1.1400	0.8772	2.1200	1	europe
+Ankara	17.5500	NA	NA	1.1230	0.8905	2.1410	1	europe

@@ -1,0 +1,43 @@
+#' Pb isotope ratio data in the Northen Hemisphere.
+#'
+#' Pb isotope ratio data to investigate potential source areas
+#' of antropogenic Pb reaching the Arctic in association with PM10.
+#' This dataset is used by the function isoplot.pm10 to generate
+#' three-isotope plots.
+#'
+#' @format A data.table with 169 observations and 9 columns.
+#'   The columns are:
+#'   \describe{
+#'   \item{\code{Sample}}{ Sample name or sampling location.}
+#'   \item{\code{Pb20x20y}}{ Six columns reporting Pb isotope ratio values for
+#'     the ratios 206Pb/204Pb, 207Pb/204Pb, 208Pb/204Pb, 206Pb/207Pb, 207Pb/206Pb and
+#'     208Pb/206Pb.}
+#'   \item{\code{Ref}}{ Reference number indicating the source of the data. A list of
+#'     references is reported at the "Source" section of this document.}
+#'   \item{\code{area}}{ A factor label for the geographical area of the sample.}
+#'   }
+#'
+#' @source Data sources are indicated by the column \code{Ref}:
+#'     \enumerate{
+#'     \item Bollhofer and Rosman, Isotopic source signatures for atmospheric
+#'       lead: The Northern Hemisphere. Geochimica et Cosmochimica Acta,
+#'       2001, 65, 1727-1740.
+#'     \item Carignan, Simonetti and Gariepy, Dispersal of atmospheric lead in
+#'       northeastern North America as recorded by epiphytic lichens.
+#'       Atmospheric Environment, 2002, 36, 3759-3766.
+#'     \item Mukai, Machida, Tanaka, Vera and Uematsu, Lead isotope ratios in
+#'       the urban air of eastern and central Russia. Atmospheric Environment,
+#'       2001, 35, 2783-2793.
+#'     \item Mukai, Tanaka and Fujii, Regional Characteristics of Sulfur and lead
+#'       isotope ratios in the atmosphere at several chinese urban sites.
+#'       Environmental Science and Technology, 2001, 35, 1064-1071.
+#'     \item Zhu, Tang, Lee, Zhang and Zhang, Lead concentrations and isotopes
+#'       in aerosols from Xiamen, China. Marine Pollution Bulletin, 2010,
+#'       60, 1946-1955.
+#'     }
+#'
+#' @examples
+#' data(pm10nh)
+#' summary(pm10nh)
+#'
+"pm10nh"
