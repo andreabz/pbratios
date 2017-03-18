@@ -68,7 +68,7 @@ extract.data <- function(filename, report = c("short", "long")) {
     # Assigning sample names
                       sample := rep(sampleid, n.row)][
     # Remove rows with "Analyte"
-                                                      -grep("Analyte", V1)]
+                                                    -grep("Analyte", V1)]
 
     data <- setnames(
       data,
