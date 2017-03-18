@@ -7,10 +7,10 @@
 count.rows(data = data)
 }
 \arguments{
-\item{data}{a dataset saved in csv format with "," as field separator and "." as
+\item{data}{A dataset saved in csv format with "," as field separator and "." as
 decimal separator. Such dataset is derived from .rep files provided by the
 instrument by opening it with spreadsheet editor and saving it as .csv file
-using a local setting = EN-US or equivalent.
+using a local setting equal to EN-US or equivalent.
 The .csv file must contain the sample name, a summary of the measuring conditions,
 the raw intensities for each monitored isotopes and a final summary with average
 signal intensities and isotope ratios. These pieces of information are repeated
@@ -30,3 +30,4 @@ The function counts the rows between two consecutive "Isotope Ratio Report" and 
 rows required by the final "Summary" for each sample. This function is used internally
 by extract.data.
 }
+\keyword{internal}
