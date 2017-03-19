@@ -13,17 +13,8 @@ name, the columns \code{Pb208207}, \code{Pb206207}, \code{Pb208206} and
 \code{Pb207206} containing the measured Pb isotope ratio values for 208Pb/207Pb,
 206Pb/207Pb, 208Pb/206Pb and 207Pb/206Pb, respectively. For each ratio also a
 column \code{Pb20x20y.se} containing the standard error is requested.
-The data.table should start with a \code{SRM} sample, however, as it is considered
-good practice to start the experimental sequence with the measurement of a blank
-sample, the removal of such sample has to be performed manually before running
-the \code{corr.mbf} function. This can be achieved
-by using
-\itemize{
-\item{\code{data <- data[-grep("NO3$", sample), ]}}{ for blank samples labelled as
-\code{"1\%HNO3"};}
-\item{\code{data <- data[-grep("BK$", sample), ]}}{ for blank samples labelled as
-\code{"BK"}.}
-}}
+The function will evaluate data from the first to the last \code{SRM}. Samples
+outside these limits will be ignored.}
 }
 \value{
 a data.table containing the Pb isotope ratios corrected for the mass bias.

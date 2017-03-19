@@ -10,7 +10,6 @@
 pm10nya <- "data-raw/pm10nya-raw.csv" %>%  # filename
               extract.data %>%  # extracting data
               calc.ratios %>%  # calculating mean ratios
-              .[-grep("NO3$", sample),] %>%  # removing blanks at the beginning of each runs
               corr.mbf %>%  # correcting ratios for mass bias
               .[-grep("BR", sample)]  # removing blanks
 use_data(pm10nya)  # saving the dataset as .rda file
