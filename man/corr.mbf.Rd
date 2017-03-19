@@ -41,8 +41,8 @@ The function corrects Pb isotope ratio for mass bias using the standard bracketi
 approach.
 }
 \examples{
-file <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
-spmnya.2012 <- extract.data(file)
+file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
+spmnya.2012 <- extract.data(file.long, report = "long")
 spmnya.2012avg <- calc.ratios(spmnya.2012)
 spmnya.2012cor <- corr.mbf(spmnya.2012avg)
 

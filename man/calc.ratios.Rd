@@ -26,8 +26,8 @@ Data outside the \eqn{median ± 2.5 mad} criterion are automatically removed fro
 dataset before computing the average ratios.
 }
 \examples{
-file <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
-spmnya.2012 <- extract.data(file)
+file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
+spmnya.2012 <- extract.data(file.long, report = "long")
 spmnya.2012avg <- calc.ratios(spmnya.2012)
 
 }

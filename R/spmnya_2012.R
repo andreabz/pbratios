@@ -1,7 +1,8 @@
 #' Raw csv dataset with Pb isotope ratio data.
 #'
 #' This raw dataset was obtained saving as .csv the original .rep file produced by
-#' the mass spectrometer Perkin Elmer ELAN ICP-MS.
+#' the mass spectrometer Perkin Elmer ELAN ICP-MS. This file is an example of \bold{long}
+#' report.
 #'
 #' Field separator are "," and decimal separator are ".". Standards with known Pb
 #' isotope ratios are used to correct the instrumental mass bias by the bracketing
@@ -19,8 +20,8 @@
 #'   Svalbard. Marine Chemistry, 2014, 163, 28-35.
 #'
 #' @examples
-#' file <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
-#' spmnya.2012 <- extract.data(file)
+#' file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
+#' spmnya.2012 <- extract.data(file.long, report = "long")
 #'
 #' @seealso
 #' \code{\link{extract.data}}
