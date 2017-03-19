@@ -39,65 +39,61 @@ calc.ratios <- function(data) {
                      Pb207206)]
 
   # Removal of values outside the median +- 2.5 mad range
-  dt.out <-
+  dt.ratio <-
     dt.ratio[,  ':='(
-      Pb208207.out = out.flag(Pb208207),
-      Pb206207.out = out.flag(Pb206207),
-      Pb208206.out = out.flag(Pb208206),
-      Pb207206.out = out.flag(Pb207206)
-    ),
-    by = sample]
+                      Pb208207.out = out.flag(Pb208207),
+                      Pb206207.out = out.flag(Pb206207),
+                      Pb208206.out = out.flag(Pb208206),
+                      Pb207206.out = out.flag(Pb207206)
+                    ),
+                      by = sample]
 
-  dt.out <- dt.out[Pb208207.out == TRUE,
-                   Pb208207 := NA][
-                     Pb206207.out == TRUE,
-                     Pb206207 := NA][
+  dt.ratio <- dt.ratio[Pb208207.out == TRUE,
+                       Pb208207 := NA][
+                       Pb206207.out == TRUE,
+                       Pb206207 := NA][
                        Pb208206.out == TRUE,
                        Pb208206 := NA][
-                         Pb207206.out == TRUE,
-                         Pb207206 := NA][, sample:Pb207206]
+                       Pb207206.out == TRUE,
+                       Pb207206 := NA][, sample:Pb207206]
 
   # Print the number of outliers for each sample
-  print(dt.out[, lapply(.SD, function (x) sum(is.na(x))), by = sample], nrows = 300)
+  print(dt.ratio[, lapply(.SD, function (x) sum(is.na(x))), by = sample], nrows = 300)
 
   # Summarising the dataset by sample name
 
   dcols <-
-    c(
-      "sample",
-      "Pb208207",
-      "Pb208207.se",
-      "Pb206207",
-      "Pb206207.se",
-      "Pb208206",
-      "Pb208206.se",
-      "Pb207206",
-      "Pb207206.se"
-    )
+            c(
+              "sample",
+              "Pb208207",
+              "Pb208207.se",
+              "Pb206207",
+              "Pb206207.se",
+              "Pb208206",
+              "Pb208206.se",
+              "Pb207206",
+              "Pb207206.se"
+            )
 
-  dt.out <- dt.out[, ':='
-                   # Calculating the number of replicates
+  dt.ratio <- dt.ratio[, ':='
+  # Calculating the number of replicates
                    (
                      Pb208207.n = sum(!is.na(Pb208207)),
                      Pb206207.n = sum(!is.na(Pb206207)),
                      Pb208206.n = sum(!is.na(Pb208206)),
                      Pb207206.n = sum(!is.na(Pb207206))
                    ), by = sample][, ':='
-                                   # Calculating the standard error
-                                   (
-                                     Pb208207.se = sd(Pb208207, na.rm = TRUE) /
-                                       sqrt(Pb208207.n),
-                                     Pb206207.se = sd(Pb206207, na.rm = TRUE) /
-                                       sqrt(Pb206207.n),
-                                     Pb208206.se = sd(Pb208206, na.rm = TRUE) /
-                                       sqrt(Pb208206.n),
-                                     Pb207206.se = sd(Pb207206, na.rm = TRUE) /
-                                       sqrt(Pb207206.n)
-                                   ), by = sample][,
-                                            # Summarising the results by sample name
-                                            lapply(.SD, mean, na.rm = T), by = sample][,
-                                            # Ordering the columns
-                                            .SD, .SDcols = dcols]
+  # Calculating the standard error
+                   (
+                     Pb208207.se = sd(Pb208207, na.rm = TRUE) / sqrt(Pb208207.n),
+                     Pb206207.se = sd(Pb206207, na.rm = TRUE) / sqrt(Pb206207.n),
+                     Pb208206.se = sd(Pb208206, na.rm = TRUE) / sqrt(Pb208206.n),
+                     Pb207206.se = sd(Pb207206, na.rm = TRUE) / sqrt(Pb207206.n)
+                    ), by = sample][,
+  # Summarising the results by sample name
+                     lapply(.SD, mean, na.rm = T), by = sample][,
+  # Ordering the columns
+                     .SD, .SDcols = dcols]
 
 }
 # End of file

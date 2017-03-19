@@ -125,18 +125,18 @@ extract.data <- function(filename, report = c("short", "long")) {
 
   # Put the dataset in wide format
   lvls <- as.character(unique(data$sample))
-  data.clean <- dcast(data[, id := 1:.N, by = .(sample, nuclide)],
+  data <- dcast(data[, id := 1:.N, by = .(sample, nuclide)],
                       id + sample ~ nuclide, value.var = 'intensity')[,
                       sample := factor(sample, levels = lvls)][order(sample)]
 
   # Calculate the raw ratios
-  data.clean[, c("Pb208207",
-                 "Pb206207",
-                 "Pb208206",
-                 "Pb207206") :=
-               .(Pb208 / Pb207,
-                 Pb206 / Pb207,
-                 Pb208 / Pb206,
-                 Pb207 / Pb206)][, -"id", with = FALSE]
+  data[, c("Pb208207",
+           "Pb206207",
+           "Pb208206",
+           "Pb207206") :=
+           .(Pb208 / Pb207,
+             Pb206 / Pb207,
+             Pb208 / Pb206,
+             Pb207 / Pb206)][, -"id", with = FALSE]
 }
 # End of function

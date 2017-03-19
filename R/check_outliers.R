@@ -44,12 +44,12 @@ check.outliers <- function(data, idname){
 
   # Outliers are marked as TRUE
   dt.out <- dt.ext[,  ':='(
-    Pb208207.out = out.flag(Pb208207),
-    Pb206207.out = out.flag(Pb206207),
-    Pb208206.out = out.flag(Pb208206),
-    Pb207206.out = out.flag(Pb207206))][,
-                                .(sample, Pb208207, Pb208207.out, Pb206207, Pb206207.out,
-                                    Pb208206, Pb208206.out, Pb207206, Pb207206.out)]
+                            Pb208207.out = out.flag(Pb208207),
+                            Pb206207.out = out.flag(Pb206207),
+                            Pb208206.out = out.flag(Pb208206),
+                            Pb207206.out = out.flag(Pb207206))][,
+                            .(sample, Pb208207, Pb208207.out, Pb206207, Pb206207.out,
+                            Pb208206, Pb208206.out, Pb207206, Pb207206.out)]
 
   #Plots with data, median, median +- 2 mad and median +- 3 mad
   ylabels <- c(bquote(phantom(.) ^ 208 * Pb ~ "/" * phantom(.) ^ 207 * Pb),
@@ -71,24 +71,24 @@ check.outliers <- function(data, idname){
 
   for (i in seq_along(ydata)) {
     p1 <- ggplot(dt.out, aes_string(x = seq(1, dt.out[, .N]), y = ydata[i])) +
-      geom_point(aes_string(shape = ydata.out[i])) +
-      scale_shape_manual(values = c(19, 8)) +
-      geom_hline(data = hline.values,
+          geom_point(aes_string(shape = ydata.out[i])) +
+          scale_shape_manual(values = c(19, 8)) +
+          geom_hline(data = hline.values,
                  aes_string(yintercept = ydata[i]),
                  color = hcol) +
       # Axis labels and theme
-      xlab("Replicate") +
-      ylab(ylabels[[i]]) +
-      scale_x_continuous(breaks = seq(1, dt.out[, .N])) +
-      theme_bw(base_size = 10) +
-      theme(
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        legend.title = element_blank(),
-        legend.position = "none"
-      )
+          xlab("Replicate") +
+          ylab(ylabels[[i]]) +
+          scale_x_continuous(breaks = seq(1, dt.out[, .N])) +
+          theme_bw(base_size = 10) +
+          theme(
+            panel.grid.major = element_blank(),
+            panel.grid.minor = element_blank(),
+            legend.title = element_blank(),
+            legend.position = "none"
+                )
 
-    plots[[i]] <- p1  # add each plot into plot list
+        plots[[i]] <- p1  # add each plot into plot list
 
   }
 

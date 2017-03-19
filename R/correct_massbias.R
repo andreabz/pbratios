@@ -66,11 +66,10 @@ corr.mbf <- function(data) {
   )]
 
   # Calculating corrected Pb isotope ratios
-  ratio.names <-
-    c("Pb208207", "Pb206207", "Pb208206", "Pb207206")
+  ratio.names <- c("Pb208207", "Pb206207", "Pb208206", "Pb207206")
   ratio.mbf <- paste0(ratio.names, ".mbf")
   ratio.unc <- paste0(ratio.names, ".U")
-  ratio.se <- paste0(ratio.names, ".se")
+  ratio.se  <- paste0(ratio.names, ".se")
 
   # Certified Pb ratios for NIST SRM 981
   cert.ratio <- c(2.37043, 1.09332, 2.16810, 0914642)
@@ -81,7 +80,7 @@ corr.mbf <- function(data) {
   for (i in seq_along(ratio.names)) {
   # Corrected ratios
     dt.samples[, ratio.names[i]] <- dt.samples[,
-                        ratio.names[i], with = FALSE] /
+                 ratio.names[i], with = FALSE] /
                       ((dt.srms[dt.samples$std1, ratio.mbf[i], with = FALSE] +
                         dt.srms[dt.samples$std2, ratio.mbf[i], with = FALSE]) / 2)
 
@@ -89,33 +88,33 @@ corr.mbf <- function(data) {
     dt.samples[, ratio.unc[i]] <- 2 * dt.samples[, ratio.names[i], with = FALSE] *
       sqrt(
   # Contribution to uncertainty from sample standard error
-        (dt.samples[, ratio.se[i], with = FALSE] /
-         dt.samples[, ratio.names[i], with = FALSE]) ^ 2 +
+              (dt.samples[, ratio.se[i], with = FALSE] /
+               dt.samples[, ratio.names[i], with = FALSE]) ^ 2 +
 
   # Contribution to uncertainty from bracketing standards
-          ((dt.srms[dt.samples$std1, ratio.se[i], with = FALSE] +
-            dt.srms[dt.samples$std2, ratio.se[i], with = FALSE]) /
-             (dt.srms[dt.samples$std1, ratio.names[i], with = FALSE] +
-              dt.srms[dt.samples$std2, ratio.names[i], with = FALSE])) ^ 2 +
+              ((dt.srms[dt.samples$std1, ratio.se[i], with = FALSE] +
+                dt.srms[dt.samples$std2, ratio.se[i], with = FALSE]) /
+               (dt.srms[dt.samples$std1, ratio.names[i], with = FALSE] +
+                dt.srms[dt.samples$std2, ratio.names[i], with = FALSE])) ^ 2 +
 
   # Contribution to uncertainty from NIST SRM 981
-          cert.unc[i] ^ 2)
+                cert.unc[i] ^ 2)
   }
 
   # Reorder the dataset
   dcols <-
-    c(
-      "sample",
-      "Pb208207",
-      "Pb208207.U",
-      "Pb206207",
-      "Pb206207.U",
-      "Pb208206",
-      "Pb208206.U",
-      "Pb207206",
-      "Pb207206.U"
-    )
+            c(
+              "sample",
+              "Pb208207",
+              "Pb208207.U",
+              "Pb206207",
+              "Pb206207.U",
+              "Pb208206",
+              "Pb208206.U",
+              "Pb207206",
+              "Pb207206.U"
+              )
 
-  dt.final <- dt.samples[, .SD, .SDcols = dcols]
+  dt.samples <- dt.samples[, .SD, .SDcols = dcols]
 }
 # End of file
