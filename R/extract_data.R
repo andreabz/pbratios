@@ -38,7 +38,11 @@
 #' @export
 #'
 extract.data <- function(filename, report = c("short", "long")) {
-  match.arg(report)
+  report <- match.arg(report)
+
+  if (report != "short" & report != "long") {
+    stop('Error: report must be either equal to "short" or "long".')
+  }
 
   # Loading the file
   data <- fread(filename, header = FALSE, na.strings = "")
@@ -102,8 +106,6 @@ extract.data <- function(filename, report = c("short", "long")) {
           new = c("element", "isotope", "intensity")
   )
 
-  } else {
-   # stop('Error: report must be either equal to "short" or "long".')
   }
 
   # Merge columns "element" and "isotope" to the new column "nuclide"
