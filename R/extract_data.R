@@ -47,8 +47,7 @@ extract.data <- function(filename, report = c("short", "long")) {
   sampleid <- data[grepl("Sample ID", V1), V2]
 
   # Fixing names for SRMs and CRMs
-  srm_id <-
-    grepl("SRM", sampleid) & !grepl("test", sampleid)
+  srm_id <- grepl("SRM", sampleid) & !grepl("test", sampleid)
   crm_id <- grepl("CRM", sampleid)
 
   sampleid[srm_id] <- paste("SRM981", 1:length(sampleid[srm_id]), sep = "_")
@@ -68,7 +67,7 @@ extract.data <- function(filename, report = c("short", "long")) {
     # Assigning sample names
                       sample := rep(sampleid, n.row)][
     # Remove rows with "Analyte"
-                                                    -grep("Analyte", V1)]
+                      -grep("Analyte", V1)]
 
     data <- setnames(
       data,
@@ -79,32 +78,37 @@ extract.data <- function(filename, report = c("short", "long")) {
 
   if (report == "long"){
 
-  # Counting rows between two reports and rows occupied by the summary
-  rows <- count.rows(data)
+    # Row number for "Replicates" and "Summary"
+    rep.row <- data[, row.id := 1:.N][grepl("^Replicates$", V1), row.id]
+    summary.row <- data[grepl("^Summary$", V1), row.id]
 
-  # Cleaning the dataset
+    # Row numbers with data for each sample
+    n.row <- summary.row - rep.row - 1
 
-  ## Setting the sample name and removing summary
-  data <-
-    data[, V1 := rep(sampleid, rows$report.rows)][-rows$fullsummary]
 
-  ## Removing empty and useless rows
-  data <- data[!is.na(V3), V1:V4][-grep("Analyte", V2)]
+    # Select row with data
+    data <- data[as.vector(mapply(seq, rep.row + 1, summary.row - 1)), ][,
+    # Assigning sample names
+                sample := rep(sampleid, n.row)][
+    # Remove rows with "Replicate"
+                -grep("Replicate", V1)][
+    # Remove rows with "Analyte"
+                -grep("Analyte", V2)]
 
   ## Rename the columns
   data <- setnames(
-    data,
-    old = c("V1", "V2", "V3", "V4"),
-    new = c("sample", "element", "isotope", "intensity")
+          data,
+          old = c("V2", "V3", "V4"),
+          new = c("element", "isotope", "intensity")
   )
 
   } else {
-    stop('Error: report must be either equal to "short" or "long".')
+   # stop('Error: report must be either equal to "short" or "long".')
   }
 
-
+  # Merge columns "element" and "isotope" to the new column "nuclide"
   data <- data[, nuclide := paste0(element, isotope)][,
-                                              .(sample, nuclide, intensity)]
+               .(sample, nuclide, intensity)]
 
   ## Assigning each column to its right class
   data.factor <- c("sample", "nuclide")
@@ -125,7 +129,7 @@ extract.data <- function(filename, report = c("short", "long")) {
                .(Pb208 / Pb207,
                  Pb206 / Pb207,
                  Pb208 / Pb206,
-                 Pb207 / Pb206)]
+                 Pb207 / Pb206)][, -"id", with = FALSE]
 }
 # End of function
 
