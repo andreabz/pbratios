@@ -28,8 +28,8 @@
 #'     possible outliers as *.
 #'
 #' @examples
-#' file <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
-#' spmnya.2012 <- extract.data(file)
+#' file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
+#' spmnya.2012 <- extract.data(file.long, report = "long")
 #' check.outliers(spmnya.2012, "II.B.50m")
 #'
 #' @seealso

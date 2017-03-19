@@ -12,7 +12,8 @@ Extracted data were published in
 }
 \description{
 This raw dataset was obtained saving as .csv the original .rep file produced by
-the mass spectrometer Perkin Elmer ELAN ICP-MS.
+the mass spectrometer Perkin Elmer ELAN ICP-MS. This file is an example of \bold{long}
+report.
 }
 \details{
 Field separator are "," and decimal separator are ".". Standards with known Pb
@@ -23,8 +24,8 @@ the coastal marine enviroment of Kongsfjorden (Svalbards, Norvegian Arctic) in
 2012.
 }
 \examples{
-file <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
-spmnya.2012 <- extract.data(file)
+file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
+spmnya.2012 <- extract.data(file.long, report = "long")
 
 }
 \seealso{
