@@ -58,7 +58,7 @@ calc.ratios <- function(data) {
                          Pb207206 := NA][, sample:Pb207206]
 
   # Print the number of outliers for each sample
-  print(dt.out[, lapply(.SD, function (x) sum(is.na(x))), by = sample])
+  print(dt.out[, lapply(.SD, function (x) sum(is.na(x))), by = sample], nrows = 300)
 
   # Summarising the dataset by sample name
 
