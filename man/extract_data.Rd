@@ -11,8 +11,7 @@ extract_data(filename, report = c("short", "long"))
 decimal separator. Such dataset is derived from .rep files provided by the
 instrument by opening it with spreadsheet editor and saving it as .csv file using
 a local setting = EN-US or equivalent.
-The .csv file must contain the sample name, a summary of the measuring conditions,
-the raw intensities for each monitored isotopes and a final summary with average
+The .csv file must contain the sample name, the raw intensities for each monitored isotopes and a final summary with average
 signal intensities and isotope ratios. These pieces of information are repeated
 for each sample. Bracketing standards are assumed to be NIST SRM 981 and should
 be labelled as \code{SRM}. QC samples are assumed to be BCR CRM 482 and should be
