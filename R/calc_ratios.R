@@ -20,14 +20,14 @@
 #'
 #' @examples
 #' file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
-#' spmnya.2012 <- extract.data(file.long, report = "long")
-#' spmnya.2012avg <- calc.ratios(spmnya.2012)
+#' spmnya.2012 <- extract_data(file.long, report = "long")
+#' spmnya.2012avg <- calc_ratios(spmnya.2012)
 #'
 #' @seealso
-#' \code{\link{extract.data}}
+#' \code{\link{extract_data}}
 #'
 #' @export
-calc.ratios <- function(data) {
+calc_ratios <- function(data) {
 
   # Calculate the raw ratios
   dt.ratio <- data[,
@@ -41,10 +41,10 @@ calc.ratios <- function(data) {
   # Removal of values outside the median +- 2.5 mad range
   dt.ratio <-
     dt.ratio[,  ':='(
-                      Pb208207.out = out.flag(Pb208207),
-                      Pb206207.out = out.flag(Pb206207),
-                      Pb208206.out = out.flag(Pb208206),
-                      Pb207206.out = out.flag(Pb207206)
+                      Pb208207.out = out_flag(Pb208207),
+                      Pb206207.out = out_flag(Pb206207),
+                      Pb208206.out = out_flag(Pb208206),
+                      Pb207206.out = out_flag(Pb207206)
                     ),
                       by = sample]
 

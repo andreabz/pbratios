@@ -22,14 +22,14 @@
 #'   and .svg in the "output" folder.
 #'
 #' @examples
-#' isoplot.pm10(pm10nya)
+#' isoplot_pm10(pm10nya)
 #'
 #' @seealso
 #' \code{\link{pm10nh}}
-#' \code{\link{isoplot.generic}}
+#' \code{\link{isoplot_generic}}
 #'
 #' @export
-isoplot.pm10 <- function(data, factor = NULL) {
+isoplot_pm10 <- function(data, factor = NULL) {
 
   # Loading data for PM10 in Northern Hemisphere
   data(pm10nh, envir = environment())
@@ -141,7 +141,7 @@ isoplot.pm10 <- function(data, factor = NULL) {
 #'   nat_local <- get_ellipse(2.044, 0.823, a = 0.003, b = 0.001, angle = 0)
 #'
 #' @seealso
-#'   \code{\link{isoplot.pm10}}
+#'   \code{\link{isoplot_pm10}}
 #'
 #' @export
 #'

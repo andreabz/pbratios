@@ -10,14 +10,14 @@
 #'
 #' @examples
 #' a <- rnorm(100)
-#' b <- out.flag(a)
+#' b <- out_flag(a)
 #'
 #' @seealso
-#' \code{\link{calc.ratios}}
+#' \code{\link{calc_ratios}}
 #'
 #' @export
 #'
-out.flag <- function(x) {
+out_flag <- function(x) {
 
   median.data <- median(x, na.rm = TRUE)
   mad.data <- mad(x, na.rm = TRUE)

@@ -29,14 +29,14 @@
 #'
 #' @examples
 #' file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
-#' spmnya.2012 <- extract.data(file.long, report = "long")
-#' check.outliers(spmnya.2012, "II.B.50m")
+#' spmnya.2012 <- extract_data(file.long, report = "long")
+#' check_outliers(spmnya.2012, "II.B.50m")
 #'
 #' @seealso
-#' \code{\link{calc.ratios}}
+#' \code{\link{calc_ratios}}
 #'
 #' @export
-check.outliers <- function(data, idname){
+check_outliers <- function(data, idname){
 
   # Subsetting the data
   idname <- paste0("^", idname, "$")
@@ -44,10 +44,10 @@ check.outliers <- function(data, idname){
 
   # Outliers are marked as TRUE
   dt.out <- dt.ext[,  ':='(
-                            Pb208207.out = out.flag(Pb208207),
-                            Pb206207.out = out.flag(Pb206207),
-                            Pb208206.out = out.flag(Pb208206),
-                            Pb207206.out = out.flag(Pb207206))][,
+                            Pb208207.out = out_flag(Pb208207),
+                            Pb206207.out = out_flag(Pb206207),
+                            Pb208206.out = out_flag(Pb208206),
+                            Pb207206.out = out_flag(Pb207206))][,
                             .(sample, Pb208207, Pb208207.out, Pb206207, Pb206207.out,
                             Pb208206, Pb208206.out, Pb207206, Pb207206.out)]
 

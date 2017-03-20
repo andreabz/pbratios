@@ -27,5 +27,5 @@ The function create a dataframe with the points required to plot an allipse.
 
 }
 \seealso{
-\code{\link{isoplot.pm10}}
+\code{\link{isoplot_pm10}}
 }

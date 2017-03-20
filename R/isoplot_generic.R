@@ -27,14 +27,14 @@
 #'
 #' @examples
 #' data(pm10nya)
-#' isoplot.generic(pm10nya)
+#' isoplot_generic(pm10nya)
 #'
 #' @seealso
-#' \code{\link{corr.mbf}}
-#' \code{\link{isoplot.pm10}}
+#' \code{\link{corr_mbf}}
+#' \code{\link{isoplot_pm10}}
 #'
 #' @export
-isoplot.generic <- function(data,
+isoplot_generic <- function(data,
                             x = "Pb208207",
                             y = "Pb206207",
                             factor = NULL,

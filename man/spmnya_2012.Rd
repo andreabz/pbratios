@@ -25,11 +25,11 @@ the coastal marine enviroment of Kongsfjorden (Svalbards, Norvegian Arctic) in
 }
 \examples{
 file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
-spmnya.2012 <- extract.data(file.long, report = "long")
+spmnya.2012 <- extract_data(file.long, report = "long")
 
 }
 \seealso{
-\code{\link{extract.data}}
+\code{\link{extract_data}}
 }
 \author{
 Andrea Bazzano and Marco Grotti.

@@ -8,11 +8,11 @@
 #'   \code{data} without dots (".").
 #'
 #' @examples
-#' save.table(pm10nya)  # save spmnya2012.csv in the "output" folder.
+#' save_table(pm10nya)  # save spmnya2012.csv in the "output" folder.
 #'
 #' @export
 #'
-save.table <- function(data) {
+save_table <- function(data) {
 
   if (dir.exists("output") == TRUE) {
 

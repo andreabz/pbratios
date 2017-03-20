@@ -26,17 +26,17 @@
 #'
 #' @examples
 #' file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
-#' spmnya.2012 <- extract.data(file.long, report = "long")
-#' spmnya.2012avg <- calc.ratios(spmnya.2012)
-#' spmnya.2012cor <- corr.mbf(spmnya.2012avg)
+#' spmnya.2012 <- extract_data(file.long, report = "long")
+#' spmnya.2012avg <- calc_ratios(spmnya.2012)
+#' spmnya.2012cor <- corr_mbf(spmnya.2012avg)
 #'
 #' @seealso
-#' \code{\link{extract.data}}
-#' \code{\link{calc.ratios}}
+#' \code{\link{extract_data}}
+#' \code{\link{calc_ratios}}
 #'
 #' @export
 #'
-corr.mbf <- function(data) {
+corr_mbf <- function(data) {
 
   id <- grep("SRM", data$sample)
   data <- data[min(id):max(id)]

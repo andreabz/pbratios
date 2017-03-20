@@ -10,7 +10,9 @@ Description: This package provide some functions to extract and process Pb isoto
     208Pb/207Pb, 206Pb/207Pb, 208Pb/206Pb and 207Pb/206Pb ratios, remove outliers and 
     correct mass bias by standard bracketing  technique. Additionally, two function for 
     producing three-isotope plots are provided.
-Depends: R (>= 2.10)
+Depends: 
+    R (>= 2.10),
+    dplyr
 Imports:
     data.table,
     ggplot2,
@@ -19,8 +21,6 @@ Imports:
     grid,
     MASS,
     gtools
-Suggest:
-    dplyr
 License: MIT + file LICENCE
 Encoding: UTF-8
 LazyData: true

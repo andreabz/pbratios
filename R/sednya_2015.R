@@ -22,9 +22,9 @@
 #'
 #' @examples
 #' file.short <- system.file("extdata", "sednya_2015.csv", package = "pbratios")
-#' sednya.2015 <- extract.data(file.short, report = "short")
+#' sednya.2015 <- extract_data(file.short, report = "short")
 #'
 #' @seealso
-#' \code{\link{extract.data}}
+#' \code{\link{extract_data}}
 #'
 NULL

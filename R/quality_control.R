@@ -26,14 +26,14 @@
 #'
 #' @examples
 #' data(pm10nya)
-#' print(qc.check(pm10nya))
+#' print(qc_check(pm10nya))
 #'
 #' @seealso
-#'   \code{\link{corr.mbf}}
+#'   \code{\link{corr_mbf}}
 #'
 #' @export
 #'
-qc.check <- function(data) {
+qc_check <- function(data) {
 
   # Extracting CRM from dataset obtained by calc.ratios function
   dt.qc <- data[grep("CRM", sample)]
