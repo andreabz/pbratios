@@ -19,15 +19,18 @@
 #'     Default values are \code{"Pb208207"} and \code{"Pb206207"}, respectively.
 #' @param factor A factor contained within the data.table that should be used to colour
 #'     datapoints. Default value is \code{NULL}.
-#' @param regression A logic expression for adding the regression line and it's \eqn{R^2}
+#' @param regression A logic string to add a regression line and it's \eqn{R^2}
 #'     value to the plot. Default is \code{FALSE}.
+#' @param save A logic value to save the plot in PDF, PNG and SVG format in the
+#'     "outplut" folder. Default is \code{FALSE}.
 #'
-#' @return The function returns a plot printed on screen. Additionally, three files
-#'   named "data_gen" are saved as .pdf, .png and .svg in the "output" folder.
+#' @return The function prints a three-isotope plot on screen. Additionally, if
+#'   \code{save = TRUE}, three files named "data_gen" are saved as .pdf, .png and
+#'   .svg in the "output" folder.
 #'
 #' @examples
 #' data(pm10nya)
-#' isoplot_generic(pm10nya)
+#' isoplot_generic(pm10nya, save = FALSE)
 #'
 #' @seealso
 #' \code{\link{corr_mbf}}
@@ -38,7 +41,8 @@ isoplot_generic <- function(data,
                             x = "Pb208207",
                             y = "Pb206207",
                             factor = NULL,
-                            regression = FALSE){
+                            regression = FALSE,
+                            save = FALSE){
 
   # Preparing axis labels
   x.str <- as.character(x)
@@ -96,29 +100,37 @@ isoplot_generic <- function(data,
 
   }
 
-  filename <- gsub("\\[.*?\\]", "\\1", deparse(substitute(data)))
-  filename <- gsub("\\.", "", filename)
+  if (save == TRUE) {
 
-  if (dir.exists("output") == TRUE) {
+    filename <- gsub("\\[.*?\\]", "\\1", deparse(substitute(data)))
+    filename <- gsub("\\.", "", filename)
+
+    if (dir.exists("output") == TRUE) {
+
+    } else {
+    dir.create("output")
+    }
+
+    ggsave(
+    filename = paste0("output/", filename, "_gen", ".pdf"),
+    plot = p, width = 13, height = 8.03, units = "cm", device = "pdf", dpi = 600)
+
+    ggsave(
+    filename = paste0("output/", filename, "_gen", ".png"),
+    plot = p, width = 13, height = 8.03, units = "cm", device = "png", dpi = 600)
+
+    ggsave(
+    filename = paste0("output/", filename, "_gen", ".svg"),
+    plot = p, width = 13, height = 8.03, units = "cm", device = "svg", dpi = 600)
+
+    p
 
   } else {
-    dir.create("output")
+
+    p
+
   }
 
-  ggsave(
-    filename = paste0("output/", filename, "_gen", ".pdf"),
-    plot = p, width = 13, height = 8.03, units = "cm", device = "pdf", dpi = 600
-  )
-  ggsave(
-    filename = paste0("output/", filename, "_gen", ".png"),
-    plot = p, width = 13, height = 8.03, units = "cm", device = "png", dpi = 600
-  )
-  ggsave(
-    filename = paste0("output/", filename, "_gen", ".svg"),
-    plot = p, width = 13, height = 8.03, units = "cm", device = "svg", dpi = 600
-  )
-
-  p
 
 }
 # End of file

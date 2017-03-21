@@ -17,19 +17,22 @@
 #'      values for 208Pb/206Pb and 207Pb/206Pb, respectively.
 #' @param factor A factor contained within the data.table and used to differentiate
 #'     datapoints using different point geometries. Default value is \code{NULL}.
+#' @param save A logic value to save the plot in PDF, PNG and SVG format in the
+#'     "outplut" folder. Default is \code{FALSE}.
 #'
-#' @return The function prints a plot on screen and saves three files as .pdf, .png
-#'   and .svg in the "output" folder.
+#' @return The function prints a three-isotope plot on screen. Additionally, if
+#'   \code{save = TRUE}, three files named "data_gen" are saved as .pdf, .png and
+#'   .svg in the "output" folder.
 #'
 #' @examples
-#' isoplot_pm10(pm10nya)
+#' isoplot_pm10(pm10nya, save = FALSE)
 #'
 #' @seealso
 #' \code{\link{pm10nh}}
 #' \code{\link{isoplot_generic}}
 #'
 #' @export
-isoplot_pm10 <- function(data, factor = NULL) {
+isoplot_pm10 <- function(data, factor = NULL, save = FALSE) {
 
   # Loading data for PM10 in Northern Hemisphere
   data(pm10nh, envir = environment())
@@ -97,30 +100,34 @@ isoplot_pm10 <- function(data, factor = NULL) {
       legend.position = c(0.01, 0.99)
     )
 
-  filename <- gsub("\\[.*?\\]", "\\1", deparse(substitute(data)))
-  filename <- gsub("\\.", "", filename)
+  if (save == TRUE) {
 
-  if (dir.exists("output") == TRUE) {
+    filename <- gsub("\\[.*?\\]", "\\1", deparse(substitute(data)))
+    filename <- gsub("\\.", "", filename)
+
+      if (dir.exists("output") == TRUE) {
+
+      } else {
+        dir.create("output")
+      }
+
+    ggsave(
+    filename = paste0("output/", filename, ".pdf"), plot = p, width = 13, height = 8.03,
+    units = "cm", device = "pdf", dpi = 600)
+
+    ggsave(
+    filename = paste0("output/", filename, ".png"), plot = p, width = 13, height = 8.03,
+    units = "cm", device = "png", dpi = 600)
+
+    ggsave(
+    filename = paste0("output/", filename, ".svg"), plot = p, width = 13, height = 8.03,
+    units = "cm", device = "svg", dpi = 600)
+
+    p
 
   } else {
-    dir.create("output")
+    p
   }
-
-  ggsave(
-    filename = paste0("output/", filename, ".pdf"), plot = p, width = 13, height = 8.03,
-    units = "cm", device = "pdf", dpi = 600
-  )
-  #embedFonts(file = paste0("output/", filename, ".pdf"))
-  ggsave(
-    filename = paste0("output/", filename, ".png"), plot = p, width = 13, height = 8.03,
-    units = "cm", device = "png", dpi = 600
-  )
-  ggsave(
-    filename = paste0("output/", filename, ".svg"), plot = p, width = 13, height = 8.03,
-    units = "cm", device = "svg", dpi = 600
-  )
-
-  p
 
 }
 # End of function

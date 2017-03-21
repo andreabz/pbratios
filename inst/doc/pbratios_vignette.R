@@ -52,8 +52,10 @@ knitr::kable(qc.short$error, digits = 2)
 
 ## ----isoplots, fig.keep='all', fig.show='hold', results='hide'-----------
 data(pm10nya)
+
 # remove QC samples
 pm10.smp <- pm10nya[-grep("CRM", sample)]
+
 # generate a factor year from sample names
 year <- paste0("20", gsub("[[:alpha:]]+[0-9]{1,2}." , "", pm10.smp$sample))
 year[grep("20-10", year)] <- "2010"
@@ -61,16 +63,22 @@ year <- as.factor(year)
 year <- droplevels(year)
 pm10.smp[, year := year]
 
-isoplot_generic(pm10.smp, x = "Pb208207", y = "Pb206207", factor = "year", regression = TRUE)
-isoplot_pm10(pm10.smp, factor = "year")
+isoplot_generic(pm10.smp, 
+                x = "Pb208207", 
+                y = "Pb206207", 
+                factor = "year", 
+                regression = TRUE,
+                save = FALSE)
+
+isoplot_pm10(pm10.smp, factor = "year", save = FALSE)
 
 ## ----isoplot_filter, eval=FALSE------------------------------------------
 #  isoplot_pm10(pm10.smp[Pb208206.U < 0.01], factor = "year")
 
-## ----save_table----------------------------------------------------------
-save_table(pm10.smp)
+## ----save_table, eval = FALSE--------------------------------------------
+#  save_table(pm10.smp)
 
 ## ----raw_data------------------------------------------------------------
-file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
+file.long  <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
 file.short <- system.file("extdata", "sednya_2015.csv", package = "pbratios")
 
