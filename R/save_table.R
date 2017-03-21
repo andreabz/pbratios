@@ -8,7 +8,7 @@
 #'   \code{data} without dots (".").
 #'
 #' @examples
-#' save_table(pm10nya)  # save spmnya2012.csv in the "output" folder.
+#' \dontrun{save_table(pm10nya)}  # save spmnya2012.csv in the "output" folder.
 #'
 #' @export
 #'
