@@ -270,22 +270,22 @@ The `pm10nh` data set contains Pb isotope ratio data measured by several researc
 References
 ----------
 
+Bazzano, A., D. Cappelletti, R. Udisti, and M. Grotti. 2016. “Long-Range Transport of Atmospheric Lead Reaching Ny-ålesund: Inter-Annual and Seasonal Variations of Potential Source Areas.” *Atmos. Environ.* 139 (August): 11–19. doi:[10.1016/j.atmosenv.2016.05.026](https://doi.org/10.1016/j.atmosenv.2016.05.026).
+
 Bazzano, A., P. Rivaro, F. Soggia, F. Ardini, and M. Grotti. 2014. “Anthropogenic and Natural Sources of Particulate Trace Elements in the Coastal Marine Environment of Kongsfjorden, Svalbard.” *Mar. Chem.* 163 (July): 28–35. doi:[10.1016/j.marchem.2014.04.001](https://doi.org/10.1016/j.marchem.2014.04.001).
 
-Bazzano, Andrea, David Cappelletti, Roberto Udisti, and Marco Grotti. 2016. “Long-Range Transport of Atmospheric Lead Reaching Ny-ålesund: Inter-Annual and Seasonal Variations of Potential Source Areas.” *Atmospheric Environment* 139 (August): 11–19. doi:[10.1016/j.atmosenv.2016.05.026](https://doi.org/10.1016/j.atmosenv.2016.05.026).
+Bollhöfer, A., and K. J. R. Rosman. 2001. “Isotopic Source Signatures for Atmospheric Lead: The Northern Hemisphere.” *Geochim. Cosmochim. Acta* 65 (11): 1727–40. doi:[10.1016/S0016-7037(00)00630-X](https://doi.org/10.1016/S0016-7037(00)00630-X).
 
-Bollhöfer, A, and K J R Rosman. 2001. “Isotopic Source Signatures for Atmospheric Lead: The Northern Hemisphere.” *Geochim. Cosmochim. Acta* 65 (11): 1727–40. doi:[10.1016/S0016-7037(00)00630-X](https://doi.org/10.1016/S0016-7037(00)00630-X).
+Carignan, J., A. Simonetti, and C. Gariépy. 2002. “Dispersal of Atmospheric Lead in Northeastern North America as Recorded by Epiphytic Lichens.” *Atmos. Environ.* 36 (23): 3759–66. doi:[10.1016/S1352-2310(02)00294-7](https://doi.org/10.1016/S1352-2310(02)00294-7).
 
-Carignan, J, A Simonetti, and C Gariépy. 2002. “Dispersal of Atmospheric Lead in Northeastern North America as Recorded by Epiphytic Lichens.” *Atmos. Environ.* 36 (23): 3759–66. doi:[10.1016/S1352-2310(02)00294-7](https://doi.org/10.1016/S1352-2310(02)00294-7).
+Cloquet, C., J. Carignan, and G. Libourel. 2006. “Atmospheric Pollutant Dispersion Around an Urban Area Using Trace Metal Concentrations and Pb Isotopic Compositions in Epiphytic Lichens.” *Atmos. Environ.* 40 (3): 574–87. doi:[10.1016/j.atmosenv.2005.09.073](https://doi.org/10.1016/j.atmosenv.2005.09.073).
 
-Cloquet, Christophe, Jean Carignan, and Guy Libourel. 2006. “Atmospheric Pollutant Dispersion Around an Urban Area Using Trace Metal Concentrations and Pb Isotopic Compositions in Epiphytic Lichens.” *Atmos. Environ.* 40 (3): 574–87. doi:[10.1016/j.atmosenv.2005.09.073](https://doi.org/10.1016/j.atmosenv.2005.09.073).
+Grotti, M., F. Soggia, F. Ardini, A. Bazzano, B. Moroni, R. Vivani, D. Cappelletti, and C. Misic. 2017. “Trace Elements in Surface Sediments from Kongsfjorden, Svalbard: Occurrence, Sources and Bioavailability.” *Intern. J. Environ. Anal. Chem.*, submitted.
 
-Grotti, Marco, Francesco Soggia, Francisco Ardini, Andrea Bazzano, Beatrice Moroni, Riccardo Vivani, David Cappelletti, and Cristina Misic. 2017. “Trace Elements in Surface Sediments from Kongsfjorden, Svalbard: Occurrence, Sources and Bioavailability.” *International Journal of Environmental Analytical Chemistry*, submitted.
+Leys, C., C. Ley, O. Klein, P. Bernard, and L. Licata. 2013. “Detecting Outliers: Do Not Use Standard Deviation Around the Mean, Use Absolute Deviation Around the Median.” *J. Exp. Soc. Psychol.* 49 (4): 764–66. doi:[http://dx.doi.org/10.1016/j.jesp.2013.03.013](https://doi.org/http://dx.doi.org/10.1016/j.jesp.2013.03.013).
 
-Leys, Christophe, Christophe Ley, Olivier Klein, Philippe Bernard, and Laurent Licata. 2013. “Detecting Outliers: Do Not Use Standard Deviation Around the Mean, Use Absolute Deviation Around the Median.” *Journal of Experimental Social Psychology* 49 (4): 764–66. doi:[http://dx.doi.org/10.1016/j.jesp.2013.03.013](https://doi.org/http://dx.doi.org/10.1016/j.jesp.2013.03.013).
+Mukai, H., T. Machida, A. Tanaka, Y. P. Vera, and M. Uematsu. 2001. “Lead Isotope Ratios in the Urban Air of Eastern and Central Russia.” *Atmos. Environ.* 35 (15): 2783–93. doi:[10.1016/S1352-2310(00)00341-1](https://doi.org/10.1016/S1352-2310(00)00341-1).
 
-Mukai, Hitoshi, Toshinobu Machida, Atsushi Tanaka, Yelpatievskiy Pavel Vera, and Mitsuo Uematsu. 2001. “Lead Isotope Ratios in the Urban Air of Eastern and Central Russia.” *Atmos. Environ.* 35 (15): 2783–93. doi:[10.1016/S1352-2310(00)00341-1](https://doi.org/10.1016/S1352-2310(00)00341-1).
+Mukai, H., A. Tanaka, T. Fujii, Y. Zeng, Y. Hong, J. Tang, S. Guo, et al. 2001. “Regional Characteristics of Sulfur and Lead Isotope Ratios in the Atmosphere at Several Chinese Urban Sites.” *Environ. Sci. Technol.* 35 (6): 1064–71. doi:[10.1021/es001399u](https://doi.org/10.1021/es001399u).
 
-Mukai, Hitoshi, Atsushi Tanaka, Toshihiro Fujii, Yiqiang Zeng, Yetang Hong, Jie Tang, Song Guo, et al. 2001. “Regional Characteristics of Sulfur and Lead Isotope Ratios in the Atmosphere at Several Chinese Urban Sites.” *Environ. Sci. Technol.* 35 (6): 1064–71. doi:[10.1021/es001399u](https://doi.org/10.1021/es001399u).
-
-Zhu, Laimin, Jianwu Tang, Ben Lee, Yu Zhang, and Feifei Zhang. 2010. “Lead Concentrations and Isotopes in Aerosols from Xiamen, China.” *Mar. Pollut. Bull.* 60 (11): 1946–55. doi:[10.1016/j.marpolbul.2010.07.035](https://doi.org/10.1016/j.marpolbul.2010.07.035).
+Zhu, L., J. Tang, B. Lee, Y. Zhang, and F. Zhang. 2010. “Lead Concentrations and Isotopes in Aerosols from Xiamen, China.” *Mar. Pollut. Bull.* 60 (11): 1946–55. doi:[10.1016/j.marpolbul.2010.07.035](https://doi.org/10.1016/j.marpolbul.2010.07.035).
