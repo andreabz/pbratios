@@ -30,7 +30,7 @@ When using the function `extract_data`, the first argument is the path for the c
 
 Standard reference material used for standard bracketing must be labelled as "SRM" and quality control (QC) samples as "CRM". The function will append a progressive integer to these names.
 
-The output of the function is a table where each row represents a replicate and columns gather the intensities for each measured nuclides. Raw $^{20x}\mathrm{Pb}/^{20y}\mathrm{Pb}$ ratios are also displayed, where $x, y = 6, 7, 8$. 
+The output of the function is a table where each row represents a replicate and columns gather the intensities for each measured nuclides. Raw 20xPb/20yPb ratios are also displayed, where $x, y = 6, 7, 8$. 
 These Pb isotope ratio still need to be filtered for possible outliers, summarised and corrected for instrumental mass bias.
 
 A typical output is given by
@@ -42,7 +42,7 @@ head(spmnya)
 
 ## Remove possible outliers and summarise ratios by `calc_ratios` {#sec1.2}
 
-The output from the function `extract_data` can be inspected for outliers by using the function `calc_ratios`. Possible outliers are defined as those ratios exceeding the $\mathrm{median} \pm 2.5\, \mathrm{mad}$ range [@leys_detecting_2013] and are automatically removed from the data set. Only about $5\,\%$ of the data is removed.
+The output from the function `extract_data` can be inspected for outliers by using the function `calc_ratios`. Possible outliers are defined as those ratios exceeding the median $\pm$ 2.5 mad range [@leys_detecting_2013] and are automatically removed from the data set. Only about $5\,\%$ of the data is removed.
 A table with the number of outliers removed for each sample is printed on screen.
 
 The data set is then summarised keeping only average ratios and standard errors for each sample.
@@ -66,7 +66,7 @@ $$
 
 The function subset the data set to start and end with bracketing standards, any samples before or after the first or last SRM is ignored.
 
-`corr_mbf` can be used directly on the output of `calc_ratios` and returns a table containing the corrected $^{20x}\mathrm{Pb}/^{20y}\mathrm{Pb}$ ratios with their extended uncertainties ($U = k\, u\mathrm{,}\  k = 2$).
+`corr_mbf` can be used directly on the output of `calc_ratios` and returns a table containing the corrected 20xPb/20yPb ratios with their extended uncertainties ($U = k\, u\mathrm{,}\  k = 2$).
 
 ```{r corr_mbf, results='asis'}
 spmnya.corr <- corr_mbf(spmnya.ratios)
@@ -104,7 +104,7 @@ file.long %>%
 
 The first argument is the output of the function `extract_data` and the second argument a string matching the name of the sample to be inspected.
 
-The function produces a plot for each Pb isotope ratio: values for each replicate are represented as dots, whereas $\mathrm{median}$, $\mathrm{median} \pm 2\, \mathrm{mad}$ and $\mathrm{median} \pm 3\, \mathrm{mad}$ are represented by solid green, yellow and red lines, respectively. Possible outliers lying outside the $\mathrm{median} \pm 2.5\, \mathrm{mad}$ are represented with the * symbol. This approach is typically preferred to the approach based on the $\mathrm{mean} \pm 2\, \mathrm{sd}$ criterion [@leys_detecting_2013].
+The function produces a plot for each Pb isotope ratio: values for each replicate are represented as dots, whereas median, median $\pm$ 2 mad and median $\pm$ 3 mad are represented by solid green, yellow and red lines, respectively. Possible outliers lying outside the median $\pm$ 2.5 mad are represented with the * symbol. This approach is typically preferred to the approach based on the mean $\pm$ 2 sd criterion [@leys_detecting_2013].
 
 Additionally, raw intensities and Pb isotope ratios for the inspected sample are printed on screen.
 
@@ -134,12 +134,14 @@ Three isotope plots are useful tools for the interpretation of variations in Pb 
 The function `isoplot.generic` can plot Pb isotope ratio values in a three-isotope space defined by the user. Additionally, data points can be differentiated by colors specifying a factor, whereas a line calculated with robust regression can be plotted on top of the data.
 
 The function `isoplot.pm10` is specifically designed for PM10 data collected in the Northern Hemisphere and allows the comparison of measured values with literature values (additional information are provided in [section 3.2](#sec3.2).
-Data points can be differentiated providing a factor but the three-isotope space is defined with $^{208}\mathrm{Pb}/^{206}\mathrm{Pb}$ as $x$ and $^{207}\mathrm{Pb}/^{206}\mathrm{Pb}$ as $y$.
+Data points can be differentiated providing a factor but the three-isotope space is defined with 208Pb/206Pb as $x$ and 207Pb/206Pb as $y$.
 
 ```{r isoplots, fig.keep='all', fig.show='hold', results='hide'}
 data(pm10nya)
+
 # remove QC samples
 pm10.smp <- pm10nya[-grep("CRM", sample)]
+
 # generate a factor year from sample names
 year <- paste0("20", gsub("[[:alpha:]]+[0-9]{1,2}." , "", pm10.smp$sample))
 year[grep("20-10", year)] <- "2010"
@@ -147,8 +149,14 @@ year <- as.factor(year)
 year <- droplevels(year)
 pm10.smp[, year := year]
 
-isoplot_generic(pm10.smp, x = "Pb208207", y = "Pb206207", factor = "year", regression = TRUE)
-isoplot_pm10(pm10.smp, factor = "year")
+isoplot_generic(pm10.smp, 
+                x = "Pb208207", 
+                y = "Pb206207", 
+                factor = "year", 
+                regression = TRUE,
+                save = FALSE)
+
+isoplot_pm10(pm10.smp, factor = "year", save = FALSE)
 ```
 
 Using the `data.table` syntax is possible to filter the data to be plotted, for examples considering only samples with small uncertainties.
@@ -161,7 +169,7 @@ Both `isoplot` functions save a pdf, png and svg copies of the plot in the folde
 ## Export data with `save_table` {#sec2.4}
 
 This function is a shortcut for the function `write.csv2` and allows to save the data in a csv file in the "output" folder. File name is derived from the R object in the first argument of the function:
-```{r save_table}
+```{r save_table, eval=FALSE}
 save_table(pm10.smp)
 ```
 creates a file with the name "pm10smp.csv" in the "output" folder.
@@ -173,7 +181,7 @@ creates a file with the name "pm10smp.csv" in the "output" folder.
 The package `pbratios` includes two examples of csv reports generated by the instrument Perkin Elmer Elan ICP-MS: `spmnya_2012.csv` and `sednya_2015.csv` are in "long" and "short" format, respectively.
 They can be accessed by running the following code.
 ```{r raw_data}
-file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
+file.long  <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
 file.short <- system.file("extdata", "sednya_2015.csv", package = "pbratios")
 ```
 
