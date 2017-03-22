@@ -64,7 +64,7 @@ extract_data <- function(filename, report = c("short", "long")) {
     n.row <- sample.row - rep.row - 1
 
     # Select row with data
-    data <- data[as.vector(mapply(seq, rep.row + 1, sample.row - 1)), ][,
+    data <- data[do.call(c, mapply(seq, rep.row + 1, sample.row - 1, SIMPLIFY = FALSE)), ][,
     # Assigning sample names
                       sample := rep(sampleid, n.row)][
     # Remove rows with "Analyte"
@@ -88,7 +88,7 @@ extract_data <- function(filename, report = c("short", "long")) {
 
 
     # Select row with data
-    data <- data[as.vector(mapply(seq, rep.row + 1, summary.row - 1)), ][,
+    data <- data[do.call(c, mapply(seq, rep.row + 1, summary.row - 1, SIMPLIFY = FALSE)), ][,
     # Assigning sample names
                 sample := rep(sampleid, n.row)][
     # Remove rows with "Replicate"
