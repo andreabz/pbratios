@@ -1,35 +1,28 @@
 #' Checking quality control criteria.
 #'
-#' The function checks quality control criteria for Pb isotope ratios measured in BCR CRM
-#' 482 QC samples.
+#' The function estimates the performances of the analytical method by calculating basic descriptive
+#' statistics on Pb isotope ratio data measured in BCR CRM 482 samples.
 #'
 #' @import data.table
 #' @import ggplot2
 #'
-#' @param data a dataset of Pb isotope ratio values obtained by the function
-#'         \code{corr.mbf}.
-#'         The dataset must contain at least one sample labelled as \code{CRM}.
-#'         The CRM will be assumed as BCR CRM 482 and values reported by
-#'         Cloquet, C., Carignan, J., Libourel, G., 2006. Atmospheric pollutant
-#'         dispersion around an urban area using trace metal concentrations and Pb
-#'         isotopic compositions in epiphytic lichens. Atmos. Environ. 40, 574–587
-#'         will be considered as reference values.
-#' @return The function returns a list containing
-#'    \itemize{
-#'    \item{\code{data}}{ Corrected Pb isotope ratios measured for BCR CRM 482 QC
-#'      samples.}
-#'    \item{\code{summary}}{ Summary statistics from "data".}
-#'    \item{\code{error}}{ Summary statistics for experimental data vs reference values.
-#'       Errors are reported on a permil scale.}
-#'    Additionally, the function plots the datapoints or boxplots (for \eqn{N > 10}).
-#' }
+#' @param data A data set of Pb isotope ratios obtained by the function \code{corr.mbf}. The dataset
+#'   must have at least one sample labelled as \code{CRM}. The CRMs are be assumed to be BCR CRM 482
+#'   with reference values reported by Cloquet, C., Carignan, J., Libourel, G., 2006. Atmospheric
+#'   pollutant dispersion around an urban area using trace metal concentrations and Pb isotopic
+#'   compositions in epiphytic lichens. Atmos. Environ. 40, 574–587.
+#'
+#' @return The function returns a list containing \itemize{ \item{\code{data}}{ Pb isotope ratios
+#'   measured for BCR CRM 482 samples.} \item{\code{summary}}{ Summary statistics from "data".}
+#'   \item{\code{error}}{ Summary statistics for relative errors of experimental data compared to
+#'   the reference values. Errors are reported on a permil scale.} Additionally, the function plots
+#'   data points or boxplots (for \eqn{N > 10}) compared with reference values. }
 #'
 #' @examples
 #' data(pm10nya)
 #' print(qc_check(pm10nya))
 #'
-#' @seealso
-#'   \code{\link{corr_mbf}}
+#' @seealso \code{\link{corr_mbf}}
 #'
 #' @export
 #'

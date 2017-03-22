@@ -1,28 +1,30 @@
-#' Correcting for instrumental mass bias.
+#' Correcting instrumental mass bias.
 #'
-#' The function corrects Pb isotope ratio for mass bias using the standard bracketing
-#' approach.
+#' The function corrects Pb isotope ratio for mass bias using the standard bracketing approach.
+#'
+#' The standard bracketing techniques uses the average mass bias factor measured in standard
+#' solutions with known isotope ratio values to correct the isotope ratios measured in samples. As
+#' mass bias factor is influenced by temporal random fluctuations, standard solutions must be
+#' analysed just before and after the samples for which the correction will be applied.
 #'
 #' @import data.table
 #'
-#' @param data A data.table produced by the calc.ratios function, containing average Pb
-#'     isotope data. The dataset must have a column \code{sample} containing the sample
-#'     name, the columns \code{Pb208207}, \code{Pb206207}, \code{Pb208206} and
-#'     \code{Pb207206} containing the measured Pb isotope ratio values for 208Pb/207Pb,
-#'     206Pb/207Pb, 208Pb/206Pb and 207Pb/206Pb, respectively. For each ratio also a
-#'     column \code{Pb20x20y.se} containing the standard error is requested.
-#'     The function will evaluate data from the first to the last \code{SRM}. Samples
-#'     outside these limits will be ignored.
+#' @param data A data.table produced by the calc.ratios function and containing average Pb isotope
+#'   data. The dataset must have a column \code{sample} containing the sample ID, the columns
+#'   \code{Pb208207}, \code{Pb206207}, \code{Pb208206} and \code{Pb207206} containing the measured
+#'   Pb isotope ratio values for 208Pb/207Pb, 206Pb/207Pb, 208Pb/206Pb and 207Pb/206Pb,
+#'   respectively. For each ratio also a columns \code{Pb20x20y.se}, containing standard errors are
+#'   required. Bracketing standards must be labelled as “SRM981” and are assumed to be diluted
+#'   solutions of NIST SRM 981. Certificate values for these ratios are reported at
+#'   \url{https://www-s.nist.gov/srmors/certificates/view_certPDF.cfm?certificate=981}. The function
+#'   will evaluate data from the first to the last \code{SRM} and samples outside these range will
+#'   be ignored.
 #'
-#' @return a data.table containing the Pb isotope ratios corrected for the mass bias.
-#'   The correction method is the bracketing technique. Bracketing standards should be
-#'   labelled as \code{SRM} followed by a progressive integer (the calc.ratios function
-#'   will rename the SRM samples accordingly). Each Pb isotope ratios is also corredated
-#'   with the extended uncertainty. These values are stored in the columns
-#'   \code{Pb20x20y.U} and are calculated by error propagation taking into account the
-#'   sample standard error, the mass bias factor standard error and the uncertainty in
-#'   the certified values for NIST SRM 981.
-#'   \bold{Attention:} no warning must be produced by the function.
+#' @return A data.table containing the Pb isotope ratios corrected for the mass bias using the
+#'   standard bracketing technique. Extended uncertainty (\eqn{U = k u}, \eqn{k = 2}) is also
+#'   provided for each ratio and it is stored in \code{Pb20x20y.U} columns. Uncertainty budget take
+#'   into account the relative standard errors for the sample, the mass bias factor and the
+#'   certified values for NIST SRM 981.
 #'
 #' @examples
 #' file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
@@ -30,9 +32,7 @@
 #' spmnya.2012avg <- calc_ratios(spmnya.2012)
 #' spmnya.2012cor <- corr_mbf(spmnya.2012avg)
 #'
-#' @seealso
-#' \code{\link{extract_data}}
-#' \code{\link{calc_ratios}}
+#' @seealso \code{\link{extract_data}} \code{\link{calc_ratios}}
 #'
 #' @export
 #'

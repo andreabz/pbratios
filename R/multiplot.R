@@ -1,23 +1,27 @@
-#' Plots multiple ggplot2 object in a single page.
+#' Displaying multiple ggplot2 objects.
 #'
-#' The function gather ggplot2 object in a single page. Original code was provided by
-#' R Graphics Cookbook, Practical Recipes for Visualizing Data by
-#' Winston Chang, Publisher: O'Reilly Media, Release Date: December 2012, Pages: 416.
+#' The function plots multiple ggplot2 object sin a single page. Original code was provided by R
+#' Graphics Cookbook, Practical Recipes for Visualizing Data by Winston Chang, Publisher: O'Reilly
+#' Media, Release Date: December 2012, Pages: 416.
 #' \url{http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/}
 #'
 #' @import grid
 #'
-#' @param ... Ggplot objects to be plotted. It is ignored if \code{plotlist} is provided.
-#' @param plotlist List of ggplot objected to be plotted. It is ignored if \code{...} is
-#'     provided. Default is \code{NULL}.
-#' @param file Gile path for the plot.
-#' @param cols Number of columns in the layout. Defaul is \code{1}.
-#' @param layout A matrix specifying the layout. If present, \code{cols} is ignored. For
-#'     example \code{matrix(c(1, 2, 3, 3), nrow = 2, byrow = TRUE)} will produce one plot
-#'     in the upper left, two plots in the upper right and three will go all the way across
-#'     the bottom. Default is null.
+#' @param ... ggplot objects to be plotted. If \code{plotlist} is provided, the argument is ignored.
 #'
-#' @return The function produce a plot with multiple ggplot objects in a single file.
+#' @param plotlist List of ggplot objects to be plotted. If \code{...} is provided, the argument is
+#'   ignored. Default is \code{NULL}.
+#'
+#' @param file File path for the plot.
+#'
+#' @param cols Number of columns in the layout. Defaul is \code{1}.
+#'
+#' @param layout A matrix specifying the layout. If present, \code{cols} is ignored. For example
+#'   \code{matrix(c(1, 2, 3, 3), nrow = 2, byrow = TRUE)} will produce one plot in the upper left,
+#'   two plots in the upper right and three will go all the way across the bottom. Default is
+#'   \code{NULL}.
+#'
+#' @return The function makes a plot with multiple ggplot objects in a single page.
 #'
 multiplot <- function(..., plotlist = NULL, file, cols = 1, layout = NULL) {
 

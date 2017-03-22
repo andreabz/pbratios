@@ -1,11 +1,11 @@
-#' Write a dataset into a .csv file.
+#' Saving a data set as csv file.
 #'
-#' The function write a dataset into a .csv file with locale IT-it or equivalent.
+#' The function saves a data set into a .csv file with locale IT-it or equivalent.
 #'
 #' @param data A dataset in the class data.frame or data.table.
 #'
-#' @return The function save a .csv file in the "output" folder. The filename is
-#'   \code{data} without dots (".").
+#' @return The function saves a csv file in the "output" folder. The filename is \code{data} without
+#'   dots (".").
 #'
 #' @examples
 #' \dontrun{save_table(pm10nya)}  # save spmnya2012.csv in the "output" folder.

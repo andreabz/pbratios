@@ -1,19 +1,18 @@
-#' Identifies possible outliers.
+#' Identifying possible outliers.
 #'
-#' Identifies possible outliers based on the \eqn{median ± 2.5 mad} range
-#' criterion. This function is used internally by the \code{calc.ratios} function.
+#' The function identifies possible outliers based on the \eqn{median ± 2.5 mad} range criterion.
+#' This function is used internally by the \code{calc.ratios} function.
 #'
 #' @param x A vector of numeric data.
 #'
-#' @return A logical vector that is \code{TRUE} if the values is outside the
-#'    \eqn{median ± 2.5 mad} range.
+#' @return A logical vector. \code{TRUE} indicates that the corresponding value is outside the
+#'   \eqn{median ± 2.5 mad} range.
 #'
 #' @examples
 #' a <- rnorm(100)
 #' b <- out_flag(a)
 #'
-#' @seealso
-#' \code{\link{calc_ratios}}
+#' @seealso \code{\link{calc_ratios}}
 #'
 #' @export
 #'

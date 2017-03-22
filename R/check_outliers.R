@@ -1,39 +1,32 @@
-#' Checks the outliers in a dataset of Pb isotope ratios.
+#' Inspecting Pb isotope ratio replicates.
 #'
-#' The function provide visual inspection on the replicates removed by the function
-#' \code{calc.ratios} based on the \eqn{median ± 2.5 mad} criterion.
+#' The function provides visual inspection of raw Pb isotope ratio replicates for each sample.
+#' Possible outliers can be easily identified.
 #'
 #' @import data.table
 #' @import ggplot2
 #'
-#' @param data A data.table produced by the function \code{extract.data}.
-#'   The dataset should contain a \code{sample} column with sample names,
-#'   \code{Pb20x} columns with \eqn{x = 6, 7, 8} with measured intensities for the
-#'   monitored isotopes, \code{Pb20x20y} columns storing 20xPb/20yPb raw isotope ratios
-#'   with \eqn{x, y = 6, 7, 8}.
+#' @param data A data.table produced by the function \code{extract.data}. The dataset should contain
+#'   a \code{sample} column with sample names, \code{Pb20x} columns (\eqn{x = 6, 7, 8}) with the
+#'   measured intensities for each isotope, \code{Pb20x20y} columns storing 20xPb/20yPb raw isotope
+#'   ratios (\eqn{x, y = 6, 7, 8}).
 #'
-#' @param idname A string containing the sample name to investigate.
-#'     (i.e. \code{"P40 I5"}).
+#' @param idname A string identical to a sample name. (i.e. \code{"P40 I5"}).
 #'
-#' @return The function returns a list containing
-#'     \itemize{
-#'     \item{\code{intensities}}{ Raw intensities for the monitored isotopes.}
-#'     \item{\code{ratios}}{ Raw Pb isotope data values with a flag = \code{TRUE}
-#'     if the value falls outside the \eqn{median ± 2.5 mad} range}.
-#'     }
-#'     Additionally, the function returns a plot with a panel for each Pb isotope ratio
-#'     showing datapoints for each replicates. The green line is the median, yellow lines
-#'     represent \eqn{median ± 2 mad} and red lines \eqn{median ± 3 mad}.
-#'     Values inside the \eqn{median ± 2.5 mad} range are represented as points,
-#'     possible outliers as *.
+#' @return The function returns a list containing \itemize{ \item{\code{intensities}}{ Raw
+#'   intensities for the monitored isotopes.} \item{\code{ratios}}{ Raw Pb isotope ratios with flag
+#'   = \code{TRUE} if the value falls outside the \eqn{median ± 2.5 mad} range}. } Additionally, the
+#'   function returns a plot with a panel for each Pb isotope ratio showing data points for each
+#'   replicates. The green line is the median, yellow lines represent \eqn{median ± 2 mad} and red
+#'   lines \eqn{median ± 3 mad}. Values inside the \eqn{median ± 2.5 mad} range are represented as
+#'   points, possible outliers as *.
 #'
 #' @examples
 #' file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
 #' spmnya.2012 <- extract_data(file.long, report = "long")
 #' check_outliers(spmnya.2012, "II.B.50m")
 #'
-#' @seealso
-#' \code{\link{calc_ratios}}
+#' @seealso \code{\link{calc_ratios}}
 #'
 #' @export
 check_outliers <- function(data, idname){
