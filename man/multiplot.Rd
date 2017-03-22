@@ -2,31 +2,31 @@
 % Please edit documentation in R/multiplot.R
 \name{multiplot}
 \alias{multiplot}
-\title{Plots multiple ggplot2 object in a single page.}
+\title{Displaying multiple ggplot2 objects.}
 \usage{
 multiplot(..., plotlist = NULL, file, cols = 1, layout = NULL)
 }
 \arguments{
-\item{...}{Ggplot objects to be plotted. It is ignored if \code{plotlist} is provided.}
+\item{...}{ggplot objects to be plotted. If \code{plotlist} is provided, the argument is ignored.}
 
-\item{plotlist}{List of ggplot objected to be plotted. It is ignored if \code{...} is
-provided. Default is \code{NULL}.}
+\item{plotlist}{List of ggplot objects to be plotted. If \code{...} is provided, the argument is
+ignored. Default is \code{NULL}.}
 
-\item{file}{Gile path for the plot.}
+\item{file}{File path for the plot.}
 
 \item{cols}{Number of columns in the layout. Defaul is \code{1}.}
 
-\item{layout}{A matrix specifying the layout. If present, \code{cols} is ignored. For
-example \code{matrix(c(1, 2, 3, 3), nrow = 2, byrow = TRUE)} will produce one plot
-in the upper left, two plots in the upper right and three will go all the way across
-the bottom. Default is null.}
+\item{layout}{A matrix specifying the layout. If present, \code{cols} is ignored. For example
+\code{matrix(c(1, 2, 3, 3), nrow = 2, byrow = TRUE)} will produce one plot in the upper left,
+two plots in the upper right and three will go all the way across the bottom. Default is
+\code{NULL}.}
 }
 \value{
-The function produce a plot with multiple ggplot objects in a single file.
+The function makes a plot with multiple ggplot objects in a single page.
 }
 \description{
-The function gather ggplot2 object in a single page. Original code was provided by
-R Graphics Cookbook, Practical Recipes for Visualizing Data by
-Winston Chang, Publisher: O'Reilly Media, Release Date: December 2012, Pages: 416.
+The function plots multiple ggplot2 object sin a single page. Original code was provided by R
+Graphics Cookbook, Practical Recipes for Visualizing Data by Winston Chang, Publisher: O'Reilly
+Media, Release Date: December 2012, Pages: 416.
 \url{http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/}
 }

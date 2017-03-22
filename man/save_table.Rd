@@ -2,7 +2,7 @@
 % Please edit documentation in R/save_table.R
 \name{save_table}
 \alias{save_table}
-\title{Write a dataset into a .csv file.}
+\title{Saving a data set as csv file.}
 \usage{
 save_table(data)
 }
@@ -10,11 +10,11 @@ save_table(data)
 \item{data}{A dataset in the class data.frame or data.table.}
 }
 \value{
-The function save a .csv file in the "output" folder. The filename is
-  \code{data} without dots (".").
+The function saves a csv file in the "output" folder. The filename is \code{data} without
+  dots (".").
 }
 \description{
-The function write a dataset into a .csv file with locale IT-it or equivalent.
+The function saves a data set into a .csv file with locale IT-it or equivalent.
 }
 \examples{
 \dontrun{save_table(pm10nya)}  # save spmnya2012.csv in the "output" folder.

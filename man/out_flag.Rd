@@ -2,7 +2,7 @@
 % Please edit documentation in R/outlier_flag.R
 \name{out_flag}
 \alias{out_flag}
-\title{Identifies possible outliers.}
+\title{Identifying possible outliers.}
 \usage{
 out_flag(x)
 }
@@ -10,12 +10,12 @@ out_flag(x)
 \item{x}{A vector of numeric data.}
 }
 \value{
-A logical vector that is \code{TRUE} if the values is outside the
-   \eqn{median ± 2.5 mad} range.
+A logical vector. \code{TRUE} indicates that the corresponding value is outside the
+  \eqn{median ± 2.5 mad} range.
 }
 \description{
-Identifies possible outliers based on the \eqn{median ± 2.5 mad} range
-criterion. This function is used internally by the \code{calc.ratios} function.
+The function identifies possible outliers based on the \eqn{median ± 2.5 mad} range criterion.
+This function is used internally by the \code{calc.ratios} function.
 }
 \examples{
 a <- rnorm(100)

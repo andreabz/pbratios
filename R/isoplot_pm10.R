@@ -147,9 +147,6 @@ isoplot_pm10 <- function(data, factor = NULL, save = FALSE) {
 #' @return The function returns a dataset of \eqn{x, y} coordinates required to draw an ellipse with
 #'   \code{ggplot2}. This function is used internally by the function \code{isoplot.pm10}.
 #'
-#' @examples
-#'   nat_local <- get_ellipse(2.044, 0.823, a = 0.003, b = 0.001, angle = 0)
-#'
 #' @seealso \code{\link{isoplot_pm10}}
 #'
 get_ellipse <- function (x = 0, y = 0, a = 1, b = 1, angle = pi / 3, n = 300){

@@ -2,29 +2,25 @@
 % Please edit documentation in R/isoplot_pm10.R
 \name{get_ellipse}
 \alias{get_ellipse}
-\title{Generate data points for drawing an ellipse.}
+\title{Generating data points on an ellipse.}
 \usage{
 get_ellipse(x = 0, y = 0, a = 1, b = 1, angle = pi/3, n = 300)
 }
 \arguments{
-\item{x, y}{Coorinates for the center of the ellipse. Default are \code{0, 0}.}
+\item{x, y}{Coordinates for the centre of the ellipse. Default are \code{0, 0}.}
 
 \item{a, b}{Major and minor semi-axis of the ellipse. Default are \code{1, 1}.}
 
 \item{angle}{Angle between the x-axis and the major semi-axis. Default is \code{pi/3}.}
 
-\item{n}{Number of datapoints to include in the dataset. Default is \code{300}.}
+\item{n}{Number of data points in the dataset. Default is \code{300}.}
 }
 \value{
-The function returns a dataset of \eqn{x, y} coordinates required to draw an
-  ellipse with \code{ggplot2}.
+The function returns a dataset of \eqn{x, y} coordinates required to draw an ellipse with
+  \code{ggplot2}. This function is used internally by the function \code{isoplot.pm10}.
 }
 \description{
-The function create a dataframe with the points required to plot an allipse.
-}
-\examples{
-  nat_local <- get_ellipse(2.044, 0.823, a = 0.003, b = 0.001, angle = 0)
-
+The function creates a dataframe with the points required to plot an ellipse.
 }
 \seealso{
 \code{\link{isoplot_pm10}}

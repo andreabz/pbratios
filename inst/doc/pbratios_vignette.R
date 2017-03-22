@@ -73,7 +73,7 @@ isoplot_generic(pm10.smp,
 isoplot_pm10(pm10.smp, factor = "year", save = FALSE)
 
 ## ----isoplot_filter, eval=FALSE------------------------------------------
-#  isoplot_pm10(pm10.smp[Pb208206.U < 0.01], factor = "year")
+#  isoplot_pm10(pm10.smp[Pb208206.U < 0.01], factor = "year", save = FALSE)
 
 ## ----save_table, eval = FALSE--------------------------------------------
 #  save_table(pm10.smp)

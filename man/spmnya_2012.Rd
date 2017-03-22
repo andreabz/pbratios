@@ -2,26 +2,23 @@
 % Please edit documentation in R/spmnya_2012.R
 \name{spmnya_2012}
 \alias{spmnya_2012}
-\title{Raw csv dataset with Pb isotope ratio data.}
+\title{Raw csv report with Pb isotope ratio data.}
 \format{The file has 5110 rows and 7 columns.}
 \source{
-Extracted data were published in
-  Bazzano, Rivaro, Soggia, Ardini and Grotti, Anthropogenic and natural sources
-  of particulate trace elements in the coastal marine environment of Kongsfjorden,
-  Svalbard. Marine Chemistry, 2014, 163, 28-35.
+Processed data were published in Bazzano, Rivaro, Soggia, Ardini and Grotti,
+  Anthropogenic and natural sources of particulate trace elements in the coastal marine
+  environment of Kongsfjorden, Svalbard. Marine Chemistry, 2014, 163, 28-35.
 }
 \description{
-This raw dataset was obtained saving as .csv the original .rep file produced by
-the mass spectrometer Perkin Elmer ELAN ICP-MS. This file is an example of \bold{long}
-report.
+This raw report was obtained saving as .csv the original .rep file produced by the mass
+spectrometer Perkin Elmer ELAN ICP-MS. This file is an example of \bold{long} report.
 }
 \details{
-Field separator are "," and decimal separator are ".". Standards with known Pb
-isotope ratios are used to correct the instrumental mass bias by the bracketing
-standard technique and are labelled as \code{SRM}. QC data are BCR CRM 482 and are
-labelled as \code{CRM}. Sample data refer to marine particulate matter collected in
-the coastal marine enviroment of Kongsfjorden (Svalbards, Norvegian Arctic) in
-2012.
+Field separator are "," and decimal separator are ".". Standards with known Pb isotope ratios are
+used to correct the instrumental mass bias by the bracketing standard technique and are labelled
+as \code{SRM}. QC data are BCR CRM 482 and are labelled as \code{CRM}. Sample data refer to
+marine particulate matter collected in the coastal marine enviroment of Kongsfjorden (Svalbards,
+Norvegian Arctic) in 2012.
 }
 \examples{
 file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")

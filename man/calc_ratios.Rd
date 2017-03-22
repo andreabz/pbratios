@@ -2,28 +2,25 @@
 % Please edit documentation in R/calc_ratios.R
 \name{calc_ratios}
 \alias{calc_ratios}
-\title{Removing outliers and averaging the replicates.}
+\title{Removing outliers and summarising Pb isotope ratio}
 \usage{
 calc_ratios(data)
 }
 \arguments{
-\item{data}{A data.table produced by the \code{extract.data} function, containing
-raw Pb isotope data. The dataset must have a column "sample" containing the sample
-name, the columns \code{Pb208207}, \code{Pb206207}, \code{Pb208206} and
-\code{Pb207206} containing the measured Pb isotope ratio values for
-208Pb/207Pb, 206Pb/207Pb, 208Pb/206Pb and 207Pb/206Pb, respectively.}
+\item{data}{A data.table produced by the \code{extract.data} function, containing raw Pb isotope
+data. The dataset must have a column "sample" containing the sample name and the columns
+\code{Pb208207}, \code{Pb206207}, \code{Pb208206}, \code{Pb207206} containing the measured Pb
+isotope ratio values for 208Pb/207Pb, 206Pb/207Pb, 208Pb/206Pb and 207Pb/206Pb, respectively.}
 }
 \value{
-A data.table with mean Pb isotope ratio values for each sample. The number of
-  replicates outside the \eqn{median ± 2.5 mad} range for each sample are printed on
-  screen.
-  Additionally, each average Pb isotope ratio is corredated with the experimental
-  standard error which is stored in the columns \code{Pb20x20y.se}.
+A data.table with average Pb isotope ratio values for each sample. The number of
+  replicates outside the \eqn{median ± 2.5 mad} range for each sample are printed on screen.
+  Additionally, the standard errors for the measured Pb isotope ratios are stored in
+  \code{Pb20x20y.se} columns.
 }
 \description{
-The function inspect raw Pb isotope ratios for outliers and summarise the replicates.
-Data outside the \eqn{median ± 2.5 mad} criterion are automatically removed from the
-dataset before computing the average ratios.
+The function removes replicates outside the \eqn{median ± 2.5 mad} range from raw Pb isotope
+ratios and calculates the average and standard error for each sample.
 }
 \examples{
 file.long <- system.file("extdata", "spmnya_2012.csv", package = "pbratios")
